@@ -1,3 +1,13 @@
+Note from emproof:
+
+For building this on a debian-trixie image, consider the following steps:
+* Move repository into debian:trixie container
+* apt update
+* apt install gcc make g++ bison flex byacc gawk pkg-config texinfo libzstd-dev file
+* ./build-toolchain --binutils
+
+
+
 		   README for GNU development tools
 
 This directory contains various GNU compilers, assemblers, linkers, 
