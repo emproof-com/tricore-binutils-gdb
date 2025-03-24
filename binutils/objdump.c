@@ -1578,6 +1578,7 @@ objdump_print_addr_with_sym (bfd *abfd, asection *sec, asymbol *sym,
 {
   if (!no_addresses)
     {
+      (*inf->fprintf_styled_func) (inf->stream, dis_style_text, "0x");
       objdump_print_value (vma, inf, skip_zeroes);
       (*inf->fprintf_styled_func) (inf->stream, dis_style_text, " ");
     }

@@ -234,7 +234,7 @@ mcs_reloc_name_lookup (bfd *abfd ATTRIBUTE_UNUSED,
 
 /* Set the howto pointer for an Lattice Mico32 ELF reloc.  */
 
-static void
+static bool
 mcs_info_to_howto_rela (bfd *abfd ATTRIBUTE_UNUSED,
                          arelent *cache_ptr,
                          Elf_Internal_Rela *dst)
@@ -244,6 +244,8 @@ mcs_info_to_howto_rela (bfd *abfd ATTRIBUTE_UNUSED,
   r_type = ELF32_R_TYPE (dst->r_info);
   BFD_ASSERT (r_type < (unsigned int) R_MCS_max);
   cache_ptr->howto = &mcs_elf_howto_table[r_type];
+
+  return true;
 }
 
 /* Handle the R_PPC_ADDR16_HA and R_PPC_REL16_HA relocs.  */
